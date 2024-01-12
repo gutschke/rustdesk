@@ -620,7 +620,7 @@ def main():
                 os.system('cp -a res/startwm.sh tmpdeb/etc/rustdesk/')
                 os.system('mkdir -p tmpdeb/etc/X11/rustdesk/')
                 os.system('cp res/xorg.conf tmpdeb/etc/X11/rustdesk/')
-                os.system('cp -a DEBIAN/* tmpdeb/DEBIAN/')
+                os.system('cp -a res/DEBIAN tmpdeb/')
                 os.system('mkdir -p tmpdeb/etc/pam.d/')
                 os.system('cp pam.d/rustdesk.debian tmpdeb/etc/pam.d/rustdesk')
                 system2('strip tmpdeb/usr/bin/rustdesk')
