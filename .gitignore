@@ -3,6 +3,10 @@
 .vscode
 .idea
 .DS_Store
+.cargo/bin
+.cargo/env
+.cargo/git
+.cargo/registry
 libsciter-gtk.so
 src/ui/inline.rs
 extractor
@@ -20,14 +24,18 @@ sciter.dll
 **pdb
 src/bridge_generated.rs
 src/bridge_generated.io.rs
-*deb
+*.deb
+*.flatpak
+*.AppImage
 rustdesk
 *.cache
 # appimage
 appimage/AppDir
 appimage/*.AppImage
 appimage/appimage-build
+appimage/*.desktop
 appimage/*.xz
+appimage/*.zsync
 # flutter
 flutter/linux/build/**
 flutter/linux/cmake-build-debug/**
@@ -44,6 +52,9 @@ flatpak/*.flatpak
 # bridge file
 lib/generated_bridge.dart
 # vscode devcontainer
+pam.d
+ubuntu
+vcpkg
 .gitconfig
 .vscode-server/
 .ssh

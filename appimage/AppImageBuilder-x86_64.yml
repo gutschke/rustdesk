@@ -3,8 +3,9 @@ version: 1
 script:
  - rm -rf ./AppDir || true
  - bsdtar -zxvf ../rustdesk-1.2.3.deb
- - tar -xvf ./data.tar.xz
+ - tar -xvf ./data.tar.*
  - mkdir ./AppDir
+ - ln -sf usr ./AppDir/app
  - mv ./usr ./AppDir/usr
  # 32x32 icon
  - for i in {32,64,128}; do mkdir -p ./AppDir/usr/share/icons/hicolor/$i\x$i/apps/; cp ../res/$i\x$i.png ./AppDir/usr/share/icons/hicolor/$i\x$i/apps/rustdesk.png; done
@@ -12,6 +13,7 @@ script:
  # desktop file
  # - sed -i "s/Icon=\/usr\/share\/rustdesk\/files\/rustdesk.png/Icon=rustdesk/g" ./AppDir/usr/share/applications/rustdesk.desktop
  - rm -rf ./AppDir/usr/share/applications
+ - rm -f control.tar.* data.tar.* debian-binary
 AppDir:
   path: ./AppDir
   app_info:
